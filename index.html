@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
   
@@ -28,7 +29,7 @@
         <div class="nav-con-right">
           <div class="cart">
             <i class="bi bi-cart3"></i>
-            <div class="cart-count">0</div>
+            <div class="cart-count" id="cart">0</div>
           </div>
           <div class="avatar">
             <img src="/images/image-avatar.png" alt="avatar">
@@ -57,16 +58,16 @@
           <h2>Fall limited Edition Sneakers</h2>
           <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci autem, accusantium rerum sed ducimus rem maiores veritatis consequuntur magni, inventore, illum in optio unde! Excepturi voluptas libero consequuntur sapiente vitae.</p>
           <div class="price">
-            <p class="current">$125.00 <span class="rebate">50%</span></p>
-            <p class="previous"><s>$250.00</s></p>
+            <p class="current">$ <span id="pts">125</span> .00 <span class="rebate">50%</span></p>
+            <p class="previous"><s>$</s><s>250.00</s></p>
           </div>
           <div class="quantity-addtocart">
-            <div class="quantity">
-              <p id="minus">-</p>
-              <p id="number-text">0</p>
-              <p id="plus">+</p>
+            <div class="quantity">              
+              <button id="minus" onclick="deleteb()">-</button>
+              <p id="number-text">1</p>
+              <button id="plus" onclick="increase()">+</button>              
             </div>
-            <button>
+            <button onclick="updateCart(parseInt(document.getElementById('number-text').innerText, 10))">
               <i class="bi bi-cart3"></i>
               Add to cart
             </button>
@@ -75,5 +76,6 @@
       </div>
     </div>
   </main>
+  <script src="app.js"></script>
 </body>
 </html>
